@@ -1,0 +1,97 @@
+/* Styles for the landing page hero section */
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/hero_section.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.heroContent .hero__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.buttons .button {
+  background-color: #25c2a0;
+  border-color: #25c2a0;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.buttons .button:hover {
+  background-color: #21af90;
+  border-color: #21af90;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem 0;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent .hero__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .buttons .button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 1.8rem;
+  }
+
+  .heroContent .hero__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons .button {
+    width: 100%;
+    max-width: 250px;
+  }
+}

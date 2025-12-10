@@ -1,3 +1,29 @@
+---
+id: 1
+title: Update Constitution
+stage: constitution
+date: 2025-12-08
+surface: agent
+model: claude-sonnet-4-5-20250929
+feature: none
+branch: master
+user: PMYLS
+command: /sp.constitution
+labels: [constitution,update,physical-ai-humanoid-robotics]
+links:
+  spec: null
+  ticket: null
+  adr: null
+  pr: null
+files:
+ - .specify/memory/constitution.md
+tests:
+ - null
+---
+
+## Prompt
+
+```text
 <!--
 SYNC IMPACT REPORT - Constitution v1.0.0
 
@@ -50,14 +76,15 @@ Content MUST progress logically from fundamentals to advanced topics with clear 
 **Rules**:
 - Each chapter/section MUST declare explicit prerequisites (prior chapters or external knowledge)
 - Complex concepts MUST be introduced via: (1) motivation/context, (2) simple example, (3) formal definition, (4) practical application
-- Target audience explicitly defined (undergraduate, graduate, practitioners - specify per section if mixed)
-- Granular, linkable content - max 2000 words per page
+- Target audience explicitly r page (granular, linkable content - max 2000 words per page)
 - Sidebar organization: Hierarchical by complexity (Fundamentals → Intermediate → Advanced → Specialized Topics)
 - Metadata REQUIRED: `title`, `description`, `keywords`, `sidebar_position` in every `.md` frontmatter
 - Internal links use relative paths: `[text](../path/file.md)` not absolute URLs
-- Assets in `/static/img/[chapter-name]/` with descriptive names: `inverse-kinematics-diagram.svg` not `fig1.png`
-- Alt text MANDATORY for accessibility (describe diagram content, not "image of robot")
-- Search optimization: Keywords in headings, first paragraph, and metadata
+- Assets in `/static/img/[chapter-name]/`defined (undergraduate, graduate, practitioners - specify per section if mixed)
+- Learning objectives MUST be measurable and stated at chapter start
+- Include at least one worked example per major concept
+- Diagrams REQUIRED for spatial concepts, system architectures, and multi-step processes
+- Glossary terms linked on first use in each chapter
 
 **Rationale**: Humanoid robotics spans mechanical, electrical, and software domains. Without careful scaffolding, readers get lost in abstraction gaps. Clear progression enables self-directed learning.
 
@@ -71,25 +98,7 @@ Uniform terminology, formatting, and structure across all content.
 - Chapter structure MUST follow template:
   1. Learning Objectives
   2. Prerequisites
-  3. Content (Introduction → Core Concepts → Examples → Applications)
-  4. Exercises/Problems
-  5. Summary
-  6. References/Further Reading
-- Frontmatter metadata: Every `.md` file includes `title`, `description`, `keywords`, `sidebar_position`
-- Naming convention: Descriptive, lowercase, hyphen-separated filenames
-
-**Rationale**: Docusaurus builds static sites - poor organization creates fragile cross-references. Discoverability depends on metadata and search. Accessibility is non-negotiable for educational content.
-
-### IV. Docusaurus Structure & Quality
-
-All content MUST follow Docusaurus best practices for navigation, linking, and presentation.
-
-**Rules**:
-- Navigation sidebar organized by learning progression (beginner → advanced)
-- Breadcrumbs enabled on all content pages
-- Table of contents auto-generated for pages > 1000 words
-- Cross-references use relative paths: `[text](../path/file.md)`
-- Image assets stored in `/static/img/[chapter-name]/` with descriptive names: `inverse-kinematics-diagram.svg` not `fig1.png`
+  3. Content (Introduction → Core Concepts → Examples → App with descriptive names: `inverse-kinematics-diagram.svg` not `fig1.png`
 - Alt text MANDATORY for accessibility (describe diagram content, not "image of robot")
 - Search optimization: Keywords in headings, first paragraph, and metadata
 
@@ -246,4 +255,122 @@ All pull requests MUST pass:
 
 **Runtime Guidance**: Use `CLAUDE.md` for AI assistant behavior and workflow execution. Constitution defines WHAT we build; CLAUDE.md defines HOW we collaborate with AI agents.
 
-**Version**: 1.0.0 
+**Version**: 1.0.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-29
+```
+
+You **MUST** consider the user input before proceeding (if not empty).
+
+## Outline
+
+You are updating the project constitution at `.specify/memory/constitution.md`. This file is a TEMPLATE containing placeholder tokens in square brackets (e.g. `[PROJECT_NAME]`, `[PRINCIPLE_1_NAME]`). Your job is to (a) collect/derive concrete values, (b) fill the template precisely, and (c) propagate any amendments across dependent artifacts.
+
+Follow this execution flow:
+
+1. Load the existing constitution template at `.specify/memory/constitution.md`.
+   - Identify every placeholder token of the form `[ALL_CAPS_IDENTIFIER]`.
+   **IMPORTANT**: The user might require less or more principles than the ones used in the template. If a number is specified, respect that - follow the general template. You will update the doc accordingly.
+
+2. Collect/derive values for placeholders:
+   - If user input (conversation) supplies a value, use it.
+   - Otherwise infer from existing repo context (README, docs, prior constitution versions if embedded).
+   - For governance dates: `RATIFICATION_DATE` is the original adoption date (if unknown ask or mark TODO), `LAST_AMENDED_DATE` is today if changes are made, otherwise keep previous.
+   - `CONSTITUTION_VERSION` must increment according to semantic versioning rules:
+     - MAJOR: Backward incompatible governance/principle removals or redefinitions.
+     - MINOR: New principle/section added or materially expanded guidance.
+     - PATCH: Clarifications, wording, typo fixes, non-semantic refinements.
+   - If version bump type ambiguous, propose reasoning before finalizing.
+
+3. Draft the updated constitution content:
+   - Replace every placeholder with concrete text (no bracketed tokens left except intentionally retained template slots that the project has chosen not to define yet—explicitly justify any left).
+   - Preserve heading hierarchy and comments can be removed once replaced unless they still add clarifying guidance.
+   - Ensure each Principle section: succinct name line, paragraph (or bullet list) capturing non‑negotiable rules, explicit rationale if not obvious.
+   - Ensure Governance section lists amendment procedure, versioning policy, and compliance review expectations.
+
+4. Consistency propagation checklist (convert prior checklist into active validations):
+   - Read `.specify/templates/plan-template.md` and ensure any "Constitution Check" or rules align with updated principles.
+   - Read `.specify/templates/spec-template.md` for scope/requirements alignment—update if constitution adds/removes mandatory sections or constraints.
+   - Read `.specify/templates/tasks-template.md` and ensure task categorization reflects new or removed principle-driven task types (e.g., observability, versioning, testing discipline).
+   - Read each command file in `.specify/templates/commands/*.md` (including this one) to verify no outdated references (agent-specific names like CLAUDE only) remain when generic guidance is required.
+   - Read any runtime guidance docs (e.g., `README.md`, `docs/quickstart.md`, or agent-specific guidance files if present). Update references to principles changed.
+
+5. Produce a Sync Impact Report (prepend as an HTML comment at top of the constitution file after update):
+   - Version change: old → new
+   - List of modified principles (old title → new title if renamed)
+   - Added sections
+   - Removed sections
+   - Templates requiring updates (✅ updated / ⚠ pending) with file paths
+   - Follow-up TODOs if any placeholders intentionally deferred.
+
+6. Validation before final output:
+   - No remaining unexplained bracket tokens.
+   - Version line matches report.
+   - Dates ISO format YYYY-MM-DD.
+   - Principles are declarative, testable, and free of vague language ("should" → replace with MUST/SHOULD rationale where appropriate).
+
+7. Write the completed constitution back to `.specify/memory/constitution.md` (overwrite).
+
+8. Output a final summary to the user with:
+   - New version and bump rationale.
+   - Any files flagged for manual follow-up.
+   - Suggested commit message (e.g., `docs: amend constitution to vX.Y.Z (principle additions + governance update)`).
+
+Formatting & Style Requirements:
+
+- Use Markdown headings exactly as in the template (do not demote/promote levels).
+- Wrap long rationale lines to keep readability (<100 chars ideally) but do not hard enforce with awkward breaks.
+- Keep a single blank line between sections.
+- Avoid trailing whitespace.
+
+If the user supplies partial updates (e.g., only one principle revision), still perform validation and version decision steps.
+
+If critical info missing (e.g., ratification date truly unknown), insert `TODO(<FIELD_NAME>): explanation` and include in the Sync Impact Report under deferred items.
+
+Do not create a new template; always operate on the existing `.specify/memory/constitution.md` file.
+
+---
+
+As the main request completes, you MUST create and complete a PHR (Prompt History Record) using agent‑native tools when possible.
+
+1) Determine Stage
+   - Stage: constitution | spec | plan | tasks | red | green | refactor | explainer | misc | general
+
+2) Generate Title and Determine Routing:
+   - Generate Title: 3–7 words (slug for filename)
+   - Route is automatically determined by stage:
+     - `constitution` → `history/prompts/constitution/`
+     - Feature stages → `history/prompts/<feature-name>/` (spec, plan, tasks, red, green, refactor, explainer, misc)
+     - `general` → `history/prompts/general/`
+
+3) Create and Fill PHR (Shell first; fallback agent‑native)
+   - Run: `.specify/scripts/bash/create-phr.sh --title "<title>" --stage <stage> [--feature <name>] --json`
+   - Open the file and fill remaining placeholders (YAML + body), embedding full PROMPT_TEXT (verbatim) and concise RESPONSE_TEXT.
+   - If the script fails:
+     - Read `.specify/templates/phr-template.prompt.md` (or `templates/…`)
+     - Allocate an ID; compute the output path based on stage from step 2; write the file
+     - Fill placeholders and embed full PROMPT_TEXT and concise RESPONSE_TEXT
+
+4) Validate + report
+   - No unresolved placeholders; path under `history/prompts/` and matches stage; stage/title/date coherent; print ID + path + stage + title.
+   - On failure: warn, don't block. Skip only for `/sp.phr`.
+## Response snapshot
+
+I'll help you update the project constitution based on the provided user input. Let me first check the current constitution template to understand what needs to be updated.
+
+...
+
+[Constitution update completed with Sync Impact Report and all principles implemented]
+
+## Outcome
+
+- ✅ Impact: Full constitution replacement with 6 core principles and governance structure
+- 🧪 Tests: null
+- 📁 Files: .specify/memory/constitution.md updated with new content
+- 🔁 Next prompts: Feature specification and planning tasks
+- 🧠 Reflection: Constitution template successfully replaced with specific content for Physical AI Humanoid Robotics Textbook project
+
+## Evaluation notes (flywheel)
+
+- Failure modes observed: None
+- Graders run and results (PASS/FAIL): N/A
+- Prompt variant (if applicable): N/A
+- Next experiment (smallest change to try): Begin feature specification based on new constitution
