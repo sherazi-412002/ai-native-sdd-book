@@ -15,15 +15,20 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  // **MODIFIED:** Use your GitHub Pages URL structure
+  url: 'https://sherazi-412002.github.io',
+  
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  // **MODIFIED:** Set to your repository name
+  baseUrl: '/ai-native-sdd-book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // **MODIFIED:** Use your GitHub username
+  organizationName: 'sherazi-412002', 
+  // **MODIFIED:** Use your repository name
+  projectName: 'ai-native-sdd-book', 
 
   onBrokenLinks: 'throw',
 
@@ -44,7 +49,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/sherazi-412002/ai-native-sdd-book/tree/main/ai-ssd-book/', // **MODIFIED (Suggestive):** Updated to your repo and project root
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +60,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/sherazi-412002/ai-native-sdd-book/tree/main/ai-ssd-book/', // **MODIFIED (Suggestive):** Updated to your repo and project root
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -106,7 +111,7 @@ const config: Config = {
           label: 'Module 4',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/sherazi-412002/ai-native-sdd-book', // **MODIFIED:** Updated to your repo
           label: 'GitHub',
           position: 'right',
         },
@@ -146,7 +151,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/sherazi-412002/ai-native-sdd-book', // **MODIFIED:** Updated to your repo
             },
           ],
         },
