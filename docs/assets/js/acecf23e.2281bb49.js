@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkai_ssd_book=globalThis.webpackChunkai_ssd_book||[]).push([[1903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/ai-native-sdd-book/blog","blogTitle":"Blog","authorsListPath":"/ai-native-sdd-book/blog/authors"}')}}]);

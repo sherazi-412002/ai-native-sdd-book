@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module4-vla/chapter3-cognitive-planning/planning-algorithms" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Planning Algorithms for Cognitive Systems | My Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sherazi-412002.github.io/ai-native-sdd-book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://sherazi-412002.github.io/ai-native-sdd-book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://sherazi-412002.github.io/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Planning Algorithms for Cognitive Systems | My Site"><meta data-rh="true" name="description" content="Exploring advanced planning algorithms for autonomous humanoid robots"><meta data-rh="true" property="og:description" content="Exploring advanced planning algorithms for autonomous humanoid robots"><meta data-rh="true" name="keywords" content="planning algorithms,cognitive planning,robot planning,task decomposition,humanoid robotics"><link data-rh="true" rel="icon" href="/ai-native-sdd-book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://sherazi-412002.github.io/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms"><link data-rh="true" rel="alternate" href="https://sherazi-412002.github.io/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms" hreflang="en"><link data-rh="true" rel="alternate" href="https://sherazi-412002.github.io/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Planning Algorithms for Cognitive Systems","item":"https://sherazi-412002.github.io/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms"}]}</script><link rel="alternate" type="application/rss+xml" href="/ai-native-sdd-book/blog/rss.xml" title="My Site RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/ai-native-sdd-book/blog/atom.xml" title="My Site Atom Feed"><link rel="stylesheet" href="/ai-native-sdd-book/assets/css/styles.8d1c9196.css">
+<script src="/ai-native-sdd-book/assets/js/runtime~main.eb9b4080.js" defer="defer"></script>
+<script src="/ai-native-sdd-book/assets/js/main.ce95abd7.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai-native-sdd-book/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai-native-sdd-book/"><div class="navbar__logo"><img src="/ai-native-sdd-book/img/logo.png" alt="AI Native Book Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai-native-sdd-book/img/logo.png" alt="AI Native Book Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/ai-native-sdd-book/docs/module1/">Module 1</a><a class="navbar__item navbar__link" href="/ai-native-sdd-book/docs/module2/2.1-understanding-digital-twins">Module 2</a><a class="navbar__item navbar__link" href="/ai-native-sdd-book/docs/module3-isaac/">Module 3</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/ai-native-sdd-book/docs/module4-vla/">Module 4</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/sherazi-412002/ai-native-sdd-book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/ai-native-sdd-book/docs/module4-vla/"><span title="Module 4: Vision-Language-Action (VLA) for Humanoid Robotics" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA) for Humanoid Robotics</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/"><span title="Module 4 - Vision-Language-Action (VLA) for Humanoid Robotics" class="linkLabel_WmDU">Module 4 - Vision-Language-Action (VLA) for Humanoid Robotics</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter1-understanding-vla-paradigm/"><span title="Chapter 1: Understanding the Vision-Language-Action Paradigm" class="categoryLinkLabel_W154">Chapter 1: Understanding the Vision-Language-Action Paradigm</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter2-voice-to-action/"><span title="Chapter 2: Voice-to-Action Pipeline with Whisper and LLMs" class="categoryLinkLabel_W154">Chapter 2: Voice-to-Action Pipeline with Whisper and LLMs</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/"><span title="Chapter 3: Cognitive Planning for Autonomous Humanoids" class="categoryLinkLabel_W154">Chapter 3: Cognitive Planning for Autonomous Humanoids</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/"><span title="Cognitive Planning for Autonomous Humanoids" class="linkLabel_WmDU">Cognitive Planning for Autonomous Humanoids</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/task-decomposition"><span title="Task Decomposition in Cognitive Planning" class="linkLabel_WmDU">Task Decomposition in Cognitive Planning</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/safety-checks"><span title="Safety Checks in Cognitive Planning" class="linkLabel_WmDU">Safety Checks in Cognitive Planning</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms"><span title="Planning Algorithms for Cognitive Systems" class="linkLabel_WmDU">Planning Algorithms for Cognitive Systems</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter4-vision-language-grounding/"><span title="Chapter 4: Vision-Language Grounding for Object Detection" class="categoryLinkLabel_W154">Chapter 4: Vision-Language Grounding for Object Detection</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/ai-native-sdd-book/docs/module4-vla/chapter5-capstone/"><span title="Chapter 5: Building the Complete VLA Capstone System" class="categoryLinkLabel_W154">Chapter 5: Building the Complete VLA Capstone System</span></a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/ai-native-sdd-book/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Module 4: Vision-Language-Action (VLA) for Humanoid Robotics</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Chapter 3: Cognitive Planning for Autonomous Humanoids</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Planning Algorithms for Cognitive Systems</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Planning Algorithms for Cognitive Systems</h1></header>
+<p>Cognitive planning in humanoid robotics requires sophisticated algorithms that can decompose complex tasks into executable actions while considering safety, efficiency, and environmental constraints. This section explores the key planning algorithms that form the backbone of modern VLA systems.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview-of-planning-in-robotics">Overview of Planning in Robotics<a href="#overview-of-planning-in-robotics" class="hash-link" aria-label="Direct link to Overview of Planning in Robotics" title="Direct link to Overview of Planning in Robotics" translate="no">​</a></h2>
+<p>Planning in humanoid robotics differs significantly from traditional robotics planning due to the complexity of human-like tasks and the need for natural language understanding. Effective planning systems must:</p>
+<ul>
+<li class=""><strong>Handle Uncertainty</strong>: Deal with unpredictable environments and human behavior</li>
+<li class=""><strong>Support Multi-Modal Input</strong>: Process both visual and linguistic information</li>
+<li class=""><strong>Ensure Safety</strong>: Incorporate safety constraints throughout the planning process</li>
+<li class=""><strong>Enable Adaptation</strong>: Adjust plans in real-time based on new information</li>
+<li class=""><strong>Maintain Human Compatibility</strong>: Ensure plans align with human expectations and norms</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="task-decomposition-approaches">Task Decomposition Approaches<a href="#task-decomposition-approaches" class="hash-link" aria-label="Direct link to Task Decomposition Approaches" title="Direct link to Task Decomposition Approaches" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hierarchical-task-network-htn-planning">Hierarchical Task Network (HTN) Planning<a href="#hierarchical-task-network-htn-planning" class="hash-link" aria-label="Direct link to Hierarchical Task Network (HTN) Planning" title="Direct link to Hierarchical Task Network (HTN) Planning" translate="no">​</a></h3>
+<p>HTN planning breaks complex tasks into hierarchical subtasks with predefined methods for decomposition:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="structure">Structure<a href="#structure" class="hash-link" aria-label="Direct link to Structure" title="Direct link to Structure" translate="no">​</a></h4>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">High-Level Task → [Method 1] → Subtasks</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                  [Method 2] → Alternative Subtasks</span><br></span></code></pre></div></div>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="advantages">Advantages<a href="#advantages" class="hash-link" aria-label="Direct link to Advantages" title="Direct link to Advantages" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Structured Approach</strong>: Clear hierarchy of task decomposition</li>
+<li class=""><strong>Reusability</strong>: Methods can be reused across different tasks</li>
+<li class=""><strong>Human Readability</strong>: Easy for humans to understand and modify</li>
+<li class=""><strong>Efficiency</strong>: Reduces search space by using domain knowledge</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="application-in-vla">Application in VLA<a href="#application-in-vla" class="hash-link" aria-label="Direct link to Application in VLA" title="Direct link to Application in VLA" translate="no">​</a></h4>
+<p>In VLA systems, HTN can decompose natural language commands into structured actions:</p>
+<ul>
+<li class="">&quot;Bring me a drink from the kitchen&quot; → [Navigate to kitchen] + [Find beverage] + [Grasp beverage] + [Navigate to user]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="classical-planning-approaches">Classical Planning Approaches<a href="#classical-planning-approaches" class="hash-link" aria-label="Direct link to Classical Planning Approaches" title="Direct link to Classical Planning Approaches" translate="no">​</a></h3>
+<p>Classical planning algorithms treat planning as a search problem in a state space:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="strips-stanford-research-institute-problem-solver">STRIPS (Stanford Research Institute Problem Solver)<a href="#strips-stanford-research-institute-problem-solver" class="hash-link" aria-label="Direct link to STRIPS (Stanford Research Institute Problem Solver)" title="Direct link to STRIPS (Stanford Research Institute Problem Solver)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>State Representation</strong>: Logical propositions describing robot state</li>
+<li class=""><strong>Operators</strong>: Actions that change state</li>
+<li class=""><strong>Goal Test</strong>: Conditions that define successful plan completion</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pddl-planning-domain-definition-language">PDDL (Planning Domain Definition Language)<a href="#pddl-planning-domain-definition-language" class="hash-link" aria-label="Direct link to PDDL (Planning Domain Definition Language)" title="Direct link to PDDL (Planning Domain Definition Language)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Formal Specification</strong>: Standard language for describing planning problems</li>
+<li class=""><strong>Extensible</strong>: Supports complex planning domains</li>
+<li class=""><strong>Tool Support</strong>: Many planning tools support PDDL</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="constraint-based-planning">Constraint-Based Planning<a href="#constraint-based-planning" class="hash-link" aria-label="Direct link to Constraint-Based Planning" title="Direct link to Constraint-Based Planning" translate="no">​</a></h3>
+<p>Constraint-based planning focuses on satisfying a set of constraints:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="soft-constraints">Soft Constraints<a href="#soft-constraints" class="hash-link" aria-label="Direct link to Soft Constraints" title="Direct link to Soft Constraints" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Preferences</strong>: Desirable but not required properties</li>
+<li class=""><strong>Qualities</strong>: Characteristics that enhance plan quality</li>
+<li class=""><strong>Trade-offs</strong>: Balancing competing objectives</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="hard-constraints">Hard Constraints<a href="#hard-constraints" class="hash-link" aria-label="Direct link to Hard Constraints" title="Direct link to Hard Constraints" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Safety Requirements</strong>: Mandatory constraints for safe operation</li>
+<li class=""><strong>Physical Limits</strong>: Robot capability boundaries</li>
+<li class=""><strong>Environmental Rules</strong>: Constraints imposed by the environment</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="modern-planning-algorithms">Modern Planning Algorithms<a href="#modern-planning-algorithms" class="hash-link" aria-label="Direct link to Modern Planning Algorithms" title="Direct link to Modern Planning Algorithms" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="probabilistic-planning">Probabilistic Planning<a href="#probabilistic-planning" class="hash-link" aria-label="Direct link to Probabilistic Planning" title="Direct link to Probabilistic Planning" translate="no">​</a></h3>
+<p>Probabilistic planning accounts for uncertainty in the environment and robot state:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="markov-decision-processes-mdps">Markov Decision Processes (MDPs)<a href="#markov-decision-processes-mdps" class="hash-link" aria-label="Direct link to Markov Decision Processes (MDPs)" title="Direct link to Markov Decision Processes (MDPs)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>States</strong>: Represent robot configurations and environment states</li>
+<li class=""><strong>Actions</strong>: Possible robot movements or manipulations</li>
+<li class=""><strong>Transitions</strong>: Probabilistic state changes</li>
+<li class=""><strong>Rewards</strong>: Quantifying desirability of outcomes</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="partially-observable-mdps-pomdps">Partially Observable MDPs (POMDPs)<a href="#partially-observable-mdps-pomdps" class="hash-link" aria-label="Direct link to Partially Observable MDPs (POMDPs)" title="Direct link to Partially Observable MDPs (POMDPs)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Observations</strong>: Uncertain sensor readings</li>
+<li class=""><strong>Belief States</strong>: Probabilistic representation of robot knowledge</li>
+<li class=""><strong>Policy</strong>: Action selection based on belief states</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reinforcement-learning-for-planning">Reinforcement Learning for Planning<a href="#reinforcement-learning-for-planning" class="hash-link" aria-label="Direct link to Reinforcement Learning for Planning" title="Direct link to Reinforcement Learning for Planning" translate="no">​</a></h3>
+<p>Reinforcement learning enables robots to learn optimal planning policies:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="q-learning">Q-Learning<a href="#q-learning" class="hash-link" aria-label="Direct link to Q-Learning" title="Direct link to Q-Learning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Value Function</strong>: Estimates expected rewards for state-action pairs</li>
+<li class=""><strong>Exploration vs. Exploitation</strong>: Balancing learning with performance</li>
+<li class=""><strong>Policy Improvement</strong>: Iteratively refining planning strategies</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="deep-reinforcement-learning">Deep Reinforcement Learning<a href="#deep-reinforcement-learning" class="hash-link" aria-label="Direct link to Deep Reinforcement Learning" title="Direct link to Deep Reinforcement Learning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Neural Networks</strong>: Approximating complex value functions</li>
+<li class=""><strong>Experience Replay</strong>: Learning from past experiences</li>
+<li class=""><strong>Target Networks</strong>: Stable learning targets</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hybrid-planning-approaches">Hybrid Planning Approaches<a href="#hybrid-planning-approaches" class="hash-link" aria-label="Direct link to Hybrid Planning Approaches" title="Direct link to Hybrid Planning Approaches" translate="no">​</a></h3>
+<p>Modern VLA systems often combine multiple planning approaches:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="symbolic-subsymbolic-integration">Symbolic-Subsymbolic Integration<a href="#symbolic-subsymbolic-integration" class="hash-link" aria-label="Direct link to Symbolic-Subsymbolic Integration" title="Direct link to Symbolic-Subsymbolic Integration" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Symbolic Planning</strong>: For high-level reasoning and task structure</li>
+<li class=""><strong>Subsymbolic Processing</strong>: For perception and real-time adaptation</li>
+<li class=""><strong>Integration Points</strong>: Seamless interaction between symbolic and subsymbolic components</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="planning-with-learning">Planning with Learning<a href="#planning-with-learning" class="hash-link" aria-label="Direct link to Planning with Learning" title="Direct link to Planning with Learning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Learning from Demonstration</strong>: Acquiring planning knowledge from examples</li>
+<li class=""><strong>Online Learning</strong>: Adapting planning strategies during execution</li>
+<li class=""><strong>Transfer Learning</strong>: Applying learned planning knowledge to new situations</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="planning-with-natural-language">Planning with Natural Language<a href="#planning-with-natural-language" class="hash-link" aria-label="Direct link to Planning with Natural Language" title="Direct link to Planning with Natural Language" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intent-recognition-in-planning">Intent Recognition in Planning<a href="#intent-recognition-in-planning" class="hash-link" aria-label="Direct link to Intent Recognition in Planning" title="Direct link to Intent Recognition in Planning" translate="no">​</a></h3>
+<p>Natural language commands must be translated into actionable plans:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="semantic-parsing">Semantic Parsing<a href="#semantic-parsing" class="hash-link" aria-label="Direct link to Semantic Parsing" title="Direct link to Semantic Parsing" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Syntax Analysis</strong>: Understanding grammatical structure</li>
+<li class=""><strong>Semantic Interpretation</strong>: Mapping language to robot actions</li>
+<li class=""><strong>Pragmatic Understanding</strong>: Considering context and implied meaning</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dialogue-based-planning">Dialogue-Based Planning<a href="#dialogue-based-planning" class="hash-link" aria-label="Direct link to Dialogue-Based Planning" title="Direct link to Dialogue-Based Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Interactive Planning</strong>: Planning in conversation with users</li>
+<li class=""><strong>Clarification Requests</strong>: Asking for additional information when needed</li>
+<li class=""><strong>Plan Negotiation</strong>: Adjusting plans based on user feedback</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ontology-based-planning">Ontology-Based Planning<a href="#ontology-based-planning" class="hash-link" aria-label="Direct link to Ontology-Based Planning" title="Direct link to Ontology-Based Planning" translate="no">​</a></h3>
+<p>Using structured knowledge bases to guide planning decisions:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="knowledge-representation">Knowledge Representation<a href="#knowledge-representation" class="hash-link" aria-label="Direct link to Knowledge Representation" title="Direct link to Knowledge Representation" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Concept Hierarchies</strong>: Organizing knowledge in taxonomies</li>
+<li class=""><strong>Relationship Modeling</strong>: Defining how concepts relate to each other</li>
+<li class=""><strong>Inference Rules</strong>: Deriving new knowledge from existing facts</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ontology-integration">Ontology Integration<a href="#ontology-integration" class="hash-link" aria-label="Direct link to Ontology Integration" title="Direct link to Ontology Integration" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Domain Ontologies</strong>: Specialized knowledge for specific application areas</li>
+<li class=""><strong>Common Ontologies</strong>: Shared knowledge structures for interoperability</li>
+<li class=""><strong>Dynamic Ontologies</strong>: Evolving knowledge bases</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="planning-for-human-robot-interaction">Planning for Human-Robot Interaction<a href="#planning-for-human-robot-interaction" class="hash-link" aria-label="Direct link to Planning for Human-Robot Interaction" title="Direct link to Planning for Human-Robot Interaction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="social-planning">Social Planning<a href="#social-planning" class="hash-link" aria-label="Direct link to Social Planning" title="Direct link to Social Planning" translate="no">​</a></h3>
+<p>Planning that considers social aspects of human-robot interaction:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="social-norms">Social Norms<a href="#social-norms" class="hash-link" aria-label="Direct link to Social Norms" title="Direct link to Social Norms" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Personal Space</strong>: Respecting human spatial boundaries</li>
+<li class=""><strong>Turn-Taking</strong>: Managing conversation flow</li>
+<li class=""><strong>Gestures</strong>: Appropriate non-verbal communication</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cultural-considerations">Cultural Considerations<a href="#cultural-considerations" class="hash-link" aria-label="Direct link to Cultural Considerations" title="Direct link to Cultural Considerations" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Cultural Sensitivity</strong>: Adapting behavior to cultural contexts</li>
+<li class=""><strong>Social Roles</strong>: Understanding appropriate social dynamics</li>
+<li class=""><strong>Emotional Intelligence</strong>: Responding appropriately to emotional cues</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="collaborative-planning">Collaborative Planning<a href="#collaborative-planning" class="hash-link" aria-label="Direct link to Collaborative Planning" title="Direct link to Collaborative Planning" translate="no">​</a></h3>
+<p>Enabling robots to work alongside humans:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="shared-autonomy">Shared Autonomy<a href="#shared-autonomy" class="hash-link" aria-label="Direct link to Shared Autonomy" title="Direct link to Shared Autonomy" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Human-in-the-Loop</strong>: Maintaining human oversight and control</li>
+<li class=""><strong>Collaborative Decision Making</strong>: Sharing planning responsibilities</li>
+<li class=""><strong>Adaptive Collaboration</strong>: Adjusting collaboration style to situation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="team-planning">Team Planning<a href="#team-planning" class="hash-link" aria-label="Direct link to Team Planning" title="Direct link to Team Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Role Assignment</strong>: Assigning tasks based on capabilities</li>
+<li class=""><strong>Coordination Mechanisms</strong>: Managing inter-robot and human-robot coordination</li>
+<li class=""><strong>Conflict Resolution</strong>: Handling disagreements between plans</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="planning-efficiency-and-optimization">Planning Efficiency and Optimization<a href="#planning-efficiency-and-optimization" class="hash-link" aria-label="Direct link to Planning Efficiency and Optimization" title="Direct link to Planning Efficiency and Optimization" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="search-space-optimization">Search Space Optimization<a href="#search-space-optimization" class="hash-link" aria-label="Direct link to Search Space Optimization" title="Direct link to Search Space Optimization" translate="no">​</a></h3>
+<p>Techniques for reducing planning complexity:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="abstraction-techniques">Abstraction Techniques<a href="#abstraction-techniques" class="hash-link" aria-label="Direct link to Abstraction Techniques" title="Direct link to Abstraction Techniques" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Hierarchical Abstraction</strong>: Simplifying complex environments</li>
+<li class=""><strong>Temporal Abstraction</strong>: Combining multiple actions into macro-actions</li>
+<li class=""><strong>Spatial Abstraction</strong>: Simplifying geometric representations</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="heuristic-functions">Heuristic Functions<a href="#heuristic-functions" class="hash-link" aria-label="Direct link to Heuristic Functions" title="Direct link to Heuristic Functions" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Distance Estimation</strong>: Estimating cost to goal</li>
+<li class=""><strong>Constraint Satisfaction</strong>: Estimating feasibility of partial plans</li>
+<li class=""><strong>Risk Assessment</strong>: Estimating safety risks in different paths</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-time-planning">Real-Time Planning<a href="#real-time-planning" class="hash-link" aria-label="Direct link to Real-Time Planning" title="Direct link to Real-Time Planning" translate="no">​</a></h3>
+<p>Requirements for planning in real-world humanoid applications:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="incremental-planning">Incremental Planning<a href="#incremental-planning" class="hash-link" aria-label="Direct link to Incremental Planning" title="Direct link to Incremental Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Partial Plans</strong>: Generating plans incrementally</li>
+<li class=""><strong>Plan Updates</strong>: Modifying plans as new information arrives</li>
+<li class=""><strong>Plan Execution</strong>: Executing plans while generating new ones</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="online-planning">Online Planning<a href="#online-planning" class="hash-link" aria-label="Direct link to Online Planning" title="Direct link to Online Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Continuous Adaptation</strong>: Adjusting plans during execution</li>
+<li class=""><strong>Replanning</strong>: Generating new plans when circumstances change</li>
+<li class=""><strong>Fallback Strategies</strong>: Preparing alternative plans</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-integration-in-planning">Safety Integration in Planning<a href="#safety-integration-in-planning" class="hash-link" aria-label="Direct link to Safety Integration in Planning" title="Direct link to Safety Integration in Planning" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="constraint-satisfaction-planning">Constraint Satisfaction Planning<a href="#constraint-satisfaction-planning" class="hash-link" aria-label="Direct link to Constraint Satisfaction Planning" title="Direct link to Constraint Satisfaction Planning" translate="no">​</a></h3>
+<p>Incorporating safety constraints directly into planning:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="hard-constraint-enforcement">Hard Constraint Enforcement<a href="#hard-constraint-enforcement" class="hash-link" aria-label="Direct link to Hard Constraint Enforcement" title="Direct link to Hard Constraint Enforcement" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Prevention</strong>: Ensuring constraints are never violated</li>
+<li class=""><strong>Verification</strong>: Checking constraint satisfaction before execution</li>
+<li class=""><strong>Recovery</strong>: Restoring constraint satisfaction after violations</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="soft-constraint-optimization">Soft Constraint Optimization<a href="#soft-constraint-optimization" class="hash-link" aria-label="Direct link to Soft Constraint Optimization" title="Direct link to Soft Constraint Optimization" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Weighted Constraints</strong>: Balancing conflicting objectives</li>
+<li class=""><strong>Trade-off Analysis</strong>: Understanding constraint conflicts</li>
+<li class=""><strong>Preference Modeling</strong>: Capturing user preferences for safety</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="risk-aware-planning">Risk-Aware Planning<a href="#risk-aware-planning" class="hash-link" aria-label="Direct link to Risk-Aware Planning" title="Direct link to Risk-Aware Planning" translate="no">​</a></h3>
+<p>Planning that explicitly considers risk:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="risk-models">Risk Models<a href="#risk-models" class="hash-link" aria-label="Direct link to Risk Models" title="Direct link to Risk Models" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Probability Models</strong>: Quantifying likelihood of adverse events</li>
+<li class=""><strong>Impact Assessment</strong>: Evaluating consequences of risks</li>
+<li class=""><strong>Risk Tolerance</strong>: Defining acceptable risk levels</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="risk-management">Risk Management<a href="#risk-management" class="hash-link" aria-label="Direct link to Risk Management" title="Direct link to Risk Management" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Risk Mitigation</strong>: Reducing probability or impact of risks</li>
+<li class=""><strong>Contingency Planning</strong>: Preparing for risk scenarios</li>
+<li class=""><strong>Risk Monitoring</strong>: Tracking risk levels during execution</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-considerations">Implementation Considerations<a href="#implementation-considerations" class="hash-link" aria-label="Direct link to Implementation Considerations" title="Direct link to Implementation Considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="algorithm-selection-criteria">Algorithm Selection Criteria<a href="#algorithm-selection-criteria" class="hash-link" aria-label="Direct link to Algorithm Selection Criteria" title="Direct link to Algorithm Selection Criteria" translate="no">​</a></h3>
+<p>Choosing appropriate planning algorithms for specific applications:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="task-complexity">Task Complexity<a href="#task-complexity" class="hash-link" aria-label="Direct link to Task Complexity" title="Direct link to Task Complexity" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Simple Tasks</strong>: May require basic planning algorithms</li>
+<li class=""><strong>Complex Tasks</strong>: Need advanced planning approaches</li>
+<li class=""><strong>Dynamic Tasks</strong>: Require adaptive planning capabilities</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resource-constraints">Resource Constraints<a href="#resource-constraints" class="hash-link" aria-label="Direct link to Resource Constraints" title="Direct link to Resource Constraints" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Computational Resources</strong>: Available processing power</li>
+<li class=""><strong>Memory Requirements</strong>: Storage for planning data structures</li>
+<li class=""><strong>Time Constraints</strong>: Real-time planning requirements</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-requirements">Safety Requirements<a href="#safety-requirements" class="hash-link" aria-label="Direct link to Safety Requirements" title="Direct link to Safety Requirements" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Critical Safety</strong>: High-stakes safety requirements</li>
+<li class=""><strong>Moderate Safety</strong>: Standard safety considerations</li>
+<li class=""><strong>Flexible Safety</strong>: Less stringent safety requirements</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-metrics">Performance Metrics<a href="#performance-metrics" class="hash-link" aria-label="Direct link to Performance Metrics" title="Direct link to Performance Metrics" translate="no">​</a></h3>
+<p>Evaluating planning system effectiveness:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="planning-quality">Planning Quality<a href="#planning-quality" class="hash-link" aria-label="Direct link to Planning Quality" title="Direct link to Planning Quality" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Solution Optimality</strong>: How close to optimal the plan is</li>
+<li class=""><strong>Plan Completeness</strong>: Whether all required actions are included</li>
+<li class=""><strong>Plan Correctness</strong>: Whether the plan achieves the intended goal</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="planning-efficiency">Planning Efficiency<a href="#planning-efficiency" class="hash-link" aria-label="Direct link to Planning Efficiency" title="Direct link to Planning Efficiency" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Execution Time</strong>: Time to generate a plan</li>
+<li class=""><strong>Memory Usage</strong>: Storage requirements for planning</li>
+<li class=""><strong>Scalability</strong>: Performance with increasing problem size</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="future-directions">Future Directions<a href="#future-directions" class="hash-link" aria-label="Direct link to Future Directions" title="Direct link to Future Directions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-enhanced-planning">AI-Enhanced Planning<a href="#ai-enhanced-planning" class="hash-link" aria-label="Direct link to AI-Enhanced Planning" title="Direct link to AI-Enhanced Planning" translate="no">​</a></h3>
+<p>Emerging trends in planning for humanoid robotics:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="neural-planning">Neural Planning<a href="#neural-planning" class="hash-link" aria-label="Direct link to Neural Planning" title="Direct link to Neural Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Neural Network Planning</strong>: Using neural networks for planning</li>
+<li class=""><strong>Differentiable Planning</strong>: Planning that can be optimized through gradients</li>
+<li class=""><strong>Graph Neural Planning</strong>: Using graph structures for planning representations</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="explainable-planning">Explainable Planning<a href="#explainable-planning" class="hash-link" aria-label="Direct link to Explainable Planning" title="Direct link to Explainable Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Plan Interpretation</strong>: Making plans understandable to humans</li>
+<li class=""><strong>Reasoning Traces</strong>: Providing explanations for planning decisions</li>
+<li class=""><strong>Human-AI Collaboration</strong>: Supporting human understanding of AI planning</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="multi-robot-planning">Multi-Robot Planning<a href="#multi-robot-planning" class="hash-link" aria-label="Direct link to Multi-Robot Planning" title="Direct link to Multi-Robot Planning" translate="no">​</a></h3>
+<p>Planning for systems with multiple robots:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="coordination-algorithms">Coordination Algorithms<a href="#coordination-algorithms" class="hash-link" aria-label="Direct link to Coordination Algorithms" title="Direct link to Coordination Algorithms" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Centralized Planning</strong>: Single planner managing multiple robots</li>
+<li class=""><strong>Decentralized Planning</strong>: Independent planning with coordination</li>
+<li class=""><strong>Hybrid Approaches</strong>: Combining centralized and decentralized elements</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="distributed-planning">Distributed Planning<a href="#distributed-planning" class="hash-link" aria-label="Direct link to Distributed Planning" title="Direct link to Distributed Planning" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Information Sharing</strong>: Efficient sharing of planning information</li>
+<li class=""><strong>Conflict Resolution</strong>: Managing conflicting plans</li>
+<li class=""><strong>Scalability</strong>: Supporting large numbers of robots</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h2>
+<p>Planning algorithms form the core of cognitive systems in humanoid robotics, enabling robots to understand complex tasks, decompose them into executable actions, and adapt to changing environments. Modern VLA systems leverage a combination of classical planning, probabilistic approaches, and machine learning to create robust, flexible planning capabilities. The integration of safety considerations, natural language understanding, and human-robot interaction makes planning in VLA systems particularly challenging but also extremely powerful.</p>
+<p>As we continue to advance in humanoid robotics, planning algorithms will evolve to support even more sophisticated capabilities, including real-time adaptation, collaborative planning, and seamless human-AI interaction. These developments will make humanoid robots increasingly capable and trustworthy partners in human environments.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/sherazi-412002/ai-native-sdd-book/tree/main/ai-ssd-book/docs/module4-vla/chapter3-cognitive-planning/planning-algorithms.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-native-sdd-book/docs/module4-vla/chapter3-cognitive-planning/safety-checks"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Safety Checks in Cognitive Planning</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-native-sdd-book/docs/module4-vla/chapter4-vision-language-grounding/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chapter 4 - Vision-Language Grounding for Object Detection</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview-of-planning-in-robotics" class="table-of-contents__link toc-highlight">Overview of Planning in Robotics</a></li><li><a href="#task-decomposition-approaches" class="table-of-contents__link toc-highlight">Task Decomposition Approaches</a><ul><li><a href="#hierarchical-task-network-htn-planning" class="table-of-contents__link toc-highlight">Hierarchical Task Network (HTN) Planning</a></li><li><a href="#classical-planning-approaches" class="table-of-contents__link toc-highlight">Classical Planning Approaches</a></li><li><a href="#constraint-based-planning" class="table-of-contents__link toc-highlight">Constraint-Based Planning</a></li></ul></li><li><a href="#modern-planning-algorithms" class="table-of-contents__link toc-highlight">Modern Planning Algorithms</a><ul><li><a href="#probabilistic-planning" class="table-of-contents__link toc-highlight">Probabilistic Planning</a></li><li><a href="#reinforcement-learning-for-planning" class="table-of-contents__link toc-highlight">Reinforcement Learning for Planning</a></li><li><a href="#hybrid-planning-approaches" class="table-of-contents__link toc-highlight">Hybrid Planning Approaches</a></li></ul></li><li><a href="#planning-with-natural-language" class="table-of-contents__link toc-highlight">Planning with Natural Language</a><ul><li><a href="#intent-recognition-in-planning" class="table-of-contents__link toc-highlight">Intent Recognition in Planning</a></li><li><a href="#ontology-based-planning" class="table-of-contents__link toc-highlight">Ontology-Based Planning</a></li></ul></li><li><a href="#planning-for-human-robot-interaction" class="table-of-contents__link toc-highlight">Planning for Human-Robot Interaction</a><ul><li><a href="#social-planning" class="table-of-contents__link toc-highlight">Social Planning</a></li><li><a href="#collaborative-planning" class="table-of-contents__link toc-highlight">Collaborative Planning</a></li></ul></li><li><a href="#planning-efficiency-and-optimization" class="table-of-contents__link toc-highlight">Planning Efficiency and Optimization</a><ul><li><a href="#search-space-optimization" class="table-of-contents__link toc-highlight">Search Space Optimization</a></li><li><a href="#real-time-planning" class="table-of-contents__link toc-highlight">Real-Time Planning</a></li></ul></li><li><a href="#safety-integration-in-planning" class="table-of-contents__link toc-highlight">Safety Integration in Planning</a><ul><li><a href="#constraint-satisfaction-planning" class="table-of-contents__link toc-highlight">Constraint Satisfaction Planning</a></li><li><a href="#risk-aware-planning" class="table-of-contents__link toc-highlight">Risk-Aware Planning</a></li></ul></li><li><a href="#implementation-considerations" class="table-of-contents__link toc-highlight">Implementation Considerations</a><ul><li><a href="#algorithm-selection-criteria" class="table-of-contents__link toc-highlight">Algorithm Selection Criteria</a></li><li><a href="#performance-metrics" class="table-of-contents__link toc-highlight">Performance Metrics</a></li></ul></li><li><a href="#future-directions" class="table-of-contents__link toc-highlight">Future Directions</a><ul><li><a href="#ai-enhanced-planning" class="table-of-contents__link toc-highlight">AI-Enhanced Planning</a></li><li><a href="#multi-robot-planning" class="table-of-contents__link toc-highlight">Multi-Robot Planning</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/ai-native-sdd-book/docs/introduction">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/sherazi-412002/ai-native-sdd-book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
