@@ -99,4 +99,4 @@ Before diving into this chapter, it's recommended that you have:
 
 In the next chapter, we'll dive deeper into the voice-to-action pipeline, exploring how speech recognition and language processing work together to create responsive humanoid robots.
 
-[Continue to Chapter 2: Voice-to-Action Pipeline with Whisper and LLMs](./chapter2-voice-to-action/index.md)
+[Continue to Chapter 2: Voice-to-Action Pipeline with Whisper and LLMs](../chapter2-voice-to-action/index.md)

@@ -1,6 +1,6 @@
 ---
 title: Module 4 - Vision-Language-Action (VLA) for Humanoid Robotics
-sidebar_position: 1
+sidebar_position: 4
 description: Complete guide to Vision-Language-Action paradigms in humanoid robotics
 keywords: [robotics, VLA, vision-language-action, humanoid, AI, ROS2, whisper, llm]
 ---

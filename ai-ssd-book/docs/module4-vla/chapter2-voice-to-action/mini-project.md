@@ -563,4 +563,4 @@ The project showcases:
 
 In the next chapter, we'll explore how to integrate these voice processing capabilities with cognitive planning systems for more complex robot behaviors.
 
-[Continue to Chapter 3: Cognitive Planning for Autonomous Humanoids](./chapter3-cognitive-planning/index.md)
+[Continue to Chapter 3: Cognitive Planning for Autonomous Humanoids](../chapter3-cognitive-planning/index.md)

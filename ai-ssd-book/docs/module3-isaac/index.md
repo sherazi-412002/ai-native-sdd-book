@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Module 3: The AI Robot Brain (NVIDIA Isaac)
 
 Welcome to Module 3: The AI Robot Brain (NVIDIA Isaac) of the Physical AI Humanoid Robotics Textbook. This module explores NVIDIA's comprehensive robotics platform that enables developers to build and deploy AI-powered robots.

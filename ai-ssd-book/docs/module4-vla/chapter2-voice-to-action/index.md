@@ -271,4 +271,4 @@ The voice-to-action pipeline combining Whisper and LLMs provides a powerful foun
 
 In the next chapter, we'll explore how to implement cognitive planning systems that can break down complex tasks into executable sequences, further enhancing the capabilities of VLA robots.
 
-[Continue to Chapter 3: Cognitive Planning for Autonomous Humanoids](./chapter3-cognitive-planning/index.md)
+[Continue to Chapter 3: Cognitive Planning for Autonomous Humanoids](../chapter3-cognitive-planning/index.md)

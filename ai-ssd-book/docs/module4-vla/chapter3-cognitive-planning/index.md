@@ -348,4 +348,4 @@ Cognitive planning transforms humanoid robots from simple command executors into
 
 In the next chapter, we'll explore vision-language grounding techniques that enable robots to understand and interact with objects in their environment through visual perception and language understanding.
 
-[Continue to Chapter 4: Vision-Language Grounding for Object Detection](./chapter4-vision-language-grounding/index.md)
+[Continue to Chapter 4: Vision-Language Grounding for Object Detection](../chapter4-vision-language-grounding/index.md)
