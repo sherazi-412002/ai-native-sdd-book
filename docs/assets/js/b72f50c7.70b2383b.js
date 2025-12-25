@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkclassic=globalThis.webpackChunkclassic||[]).push([[4975],{1353(s){s.exports=JSON.parse('{"metadata":{"permalink":"/ebsite/docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
