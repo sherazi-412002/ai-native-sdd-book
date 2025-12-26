@@ -18,12 +18,12 @@ const config: Config = {
   url: 'https://sherazi-412002.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/ai-native-sdd-books/',
+  baseUrl: '/ai-native-sdd-book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'sherazi-412002', // Usually your GitHub org/user name.
-  projectName: 'ai-native-sdd-books', // Usually your repo name.
+  projectName: 'ai-native-sdd-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -44,7 +44,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/sherazi-412002/ai-native-sdd-books/tree/main/',
+            'https://github.com/sherazi-412002/ai-native-sdd-book/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/sherazi-412002/ai-native-sdd-books/tree/main/',
+            'https://github.com/sherazi-412002/ai-native-sdd-book/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -89,7 +89,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/sherazi-412002/ai-native-sdd-books',
+          href: 'https://github.com/sherazi-412002/ai-native-sdd-book',
           label: 'GitHub',
           position: 'right',
         },
